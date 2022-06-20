@@ -15,5 +15,5 @@ class Example(BaseCase):
 
     @staticmethod
     def test_example3():
-        if 2 / 2 != 4:
+        if 2 / 2 != 1:
             assert False
