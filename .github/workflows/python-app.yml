@@ -4,9 +4,9 @@
 name: Python application
 
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-    schedule:
-    - cron: '*/1 * * * *'
+  push:
+    branches:
+     - main
 
 permissions:
   contents: read
