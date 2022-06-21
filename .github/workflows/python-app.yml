@@ -40,7 +40,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
         
     - name: Test with pytest
-      run: pytest *.py --junitxml="test-result.xml" --headless --dashboard
+      run: |
+        pytest test_example --junitxml="test-result.xml" --headless --dashboard
+        pytest test_example2 --junitxml="test-result2.xml" --headless --dashboard
       
     - name: Test Reporter
       uses: dorny/test-reporter@v1.5.0
