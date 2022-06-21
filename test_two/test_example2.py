@@ -1,7 +1,7 @@
 from seleniumbase import BaseCase
 
 
-class Example(BaseCase):
+class TestExample3(BaseCase):
 
     def test_example0(self):
         if 2 + 2 != 4:
@@ -20,7 +20,7 @@ class Example(BaseCase):
             assert False
 
 
-class Example2(BaseCase):
+class TestExample4(BaseCase):
 
     def test_example4(self):
         if 2 + 2 != 4:
