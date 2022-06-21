@@ -22,6 +22,7 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.9.7"
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -38,5 +39,14 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        
     - name: Test with pytest
-      run: pytest
+      run: pytest --junitxml test-results.xml "C:\Repositories\JenkinsTest\Test"
+      
+    - name: Test Reporter
+      uses: dorny/test-reporter@v1.5.0
+      if: success() || failure()    # run this step even if previous step failed
+      with:
+        name: JEST Tests            # Name of the check run which will be created
+        path: test*.xml             # Path to test results
+        reporter: jest-junit        # Format of test results
