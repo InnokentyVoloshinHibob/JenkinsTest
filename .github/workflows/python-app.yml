@@ -41,7 +41,8 @@ jobs:
         
     - name: Test with pytest
       run: |
-        pytest --junitxml="test-result.xml" --headless --dashboard
+        pytest test_example.py  --junitxml="test-result.xml"  --headless --dashboard -o junit_suite_name=first_test
+        pytest test_example2.py --junitxml="test-result2.xml" --headless --dashboard -o junit_suite_name=second_test
       
     - name: Test Reporter
       uses: dorny/test-reporter@v1.5.0
