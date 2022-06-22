@@ -40,7 +40,9 @@ jobs:
         sbase install chromedriver latest
         
     - name: secret
-      run: python -c 'import test_one.test_example; test_one.test_example.secret_test("$SUPER_SECRET")'
+      env:
+       SUPER_SECRET: ${{ secrets.TEST }}
+      run: python -c 'import test_one.test_example; test_one.test_example.secret_test(SUPER_SECRET)'
     
 
     - name: Lint with flake8
