@@ -21,12 +21,13 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.9.7"
-    
-    - name: secret
-      with: # Set the secret as an input
-       super_secret: ${{ secrets.TEST }}
-      env: # Or as an environment variable
-       super_secret: ${{ secrets.TEST }}
+       
+    - shell: bash
+      env:
+       SUPER_SECRET: ${{ secrets.TEST }}
+      run: |
+       example-command "$SUPER_SECRET"
+       echo "$SUPER_SECRET"
        
         
     - name: Install dependencies
@@ -38,7 +39,6 @@ jobs:
         pip install pandas
         pip install pip install snowflake-connector-python
         sbase install chromedriver latest
-        echo super_secret
     
 
     - name: Lint with flake8
