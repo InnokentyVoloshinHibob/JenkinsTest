@@ -1,6 +1,10 @@
 from seleniumbase import BaseCase
 
 
+def secret_test(secret):
+    print(secret)
+
+
 class TestExample1(BaseCase):
 
     def test_example0(self):
