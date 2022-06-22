@@ -38,6 +38,9 @@ jobs:
         pip install pandas
         pip install pip install snowflake-connector-python
         sbase install chromedriver latest
+        
+    - name: secret
+      run: python -c 'import test_example; test_example.secret_test($SUPER_SECRET)'
     
 
     - name: Lint with flake8
