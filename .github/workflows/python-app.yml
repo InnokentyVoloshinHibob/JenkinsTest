@@ -42,7 +42,7 @@ jobs:
     - name: secret
       env:
        SUPER_SECRET: ${{ secrets.TEST }}
-      run: python -c 'import test_one.test_example; test_one.test_example.secret_test($SUPER_SECRET)'
+      run: python -c 'import test_one.test_example; test_one.test_example.secret_test(${{ secrets.TEST }})'
     
 
     - name: Lint with flake8
