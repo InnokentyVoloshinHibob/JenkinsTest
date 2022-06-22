@@ -28,9 +28,6 @@ jobs:
       env: # Or as an environment variable
        super_secret: ${{ secrets.TEST }}
        
-    - name: print token
-      run: echo super_secret
-     
         
     - name: Install dependencies
       run: |
@@ -41,6 +38,7 @@ jobs:
         pip install pandas
         pip install pip install snowflake-connector-python
         sbase install chromedriver latest
+        echo super_secret
     
 
     - name: Lint with flake8
