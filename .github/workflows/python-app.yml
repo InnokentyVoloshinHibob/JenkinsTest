@@ -72,6 +72,7 @@ jobs:
         reporter: java-junit        # Format of test results
 
     - name: Send mail
+      if: always()
       uses: dawidd6/action-send-mail@v3
       with:
        server_address: smtp.gmail.com
