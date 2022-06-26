@@ -25,8 +25,11 @@ jobs:
     - shell: bash
       env:
        SUPER_SECRET: ${{ secrets.TEST }}
+       USERNAME: ${{secrets.EMAIL_USERNAME}}
+       PASSWORD: ${{secrets.EMAIL_PASSWORD}}
       run: |
-       echo "$SUPER_SECRET"
+       echo "USERNAME"
+       echo "PASSWORD"
        
         
     - name: Install dependencies
