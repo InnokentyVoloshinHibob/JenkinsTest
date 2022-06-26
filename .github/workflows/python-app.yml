@@ -74,6 +74,9 @@ jobs:
     - name: Send mail
       if: always()
       uses: dawidd6/action-send-mail@v2
+      env:
+       USERNAME: ${{secrets.EMAIL_USERNAME}}
+       PASSWORD: ${{secrets.EMAIL_PASSWORD}}
       with:
        server_address: smtp.gmail.com
        server_port: 465
