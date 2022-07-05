@@ -13,13 +13,16 @@ jobs:
       uses: actions/checkout@v2
         
     - name: Create File
-      run: cp -r -Force Report\history Test\Report
+      run: |
+        cp -r --force Report\history Test\Report
+        touch test.txt
     
     - name: Commit files # commit the output folder
       run: |
         git config user.email "test@github.com"
         git config user.name "GitHub Action test"
         git add test.txt
+        git add ./Test\Report
         git commit -m "Add changes"
         
     - name: Push changes # push the output folder to your repo
