@@ -7,7 +7,11 @@ jobs:
   push_file:
     runs-on: ubuntu-latest
     
+    
     steps:
+    - name: checkout
+      uses: actions/checkout@v2
+        
     - name: Create File
       run: touch test.txt
     
@@ -17,6 +21,7 @@ jobs:
         git config user.name "GitHub Action test"
         git add test.txt
         git commit -m "Add changes"
+        
     - name: Push changes # push the output folder to your repo
       uses: ad-m/github-push-action@master
       with:
