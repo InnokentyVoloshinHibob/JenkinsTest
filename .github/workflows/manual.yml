@@ -13,8 +13,8 @@ jobs:
     
     - name: Commit files # commit the output folder
       run: |
-        git config --local user.email "test@github.com"
-        git config --local user.name "GitHub Action test"
+        git config user.email "test@github.com"
+        git config user.name "GitHub Action test"
         git add test.txt
         git commit -m "Add changes"
     - name: Push changes # push the output folder to your repo
