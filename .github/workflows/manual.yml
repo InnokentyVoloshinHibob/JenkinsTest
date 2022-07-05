@@ -22,7 +22,7 @@ jobs:
         git config user.email "test@github.com"
         git config user.name "GitHub Action test"
         git add test.txt
-        git add ./Test\Report
+        git add ./test_two
         git commit -m "Add changes"
         
     - name: Push changes # push the output folder to your repo
